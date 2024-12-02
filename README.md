@@ -1,4 +1,4 @@
-# Web-Game-Project
+# Web-Game-Project: Battle Masters
 Web Programming 1 Project
 
 Project Name: 
