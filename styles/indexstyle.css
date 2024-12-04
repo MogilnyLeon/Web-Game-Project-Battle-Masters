@@ -1,6 +1,26 @@
+
+    /*
+
+    .woff = best option for web
+    .ttf = traditional option
+    .bot = internet explorer
+
+    @font-face {
+        font-family: "smthin";
+        src: url(filepath);
+    }
+
+    body {
+        font-family: "smthin",sans-serif
+    }
+    */
 body {
+
+
+
     background-image: url('../public/PKMNBattleMaster.jpg');
     background-repeat: no-repeat;
     height:max-content;
-    width:max-content;
+    width:max-content; 
 }
+
