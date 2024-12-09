@@ -1,5 +1,5 @@
 import { Player } from "../classes/player"; 
-
+import { Character } from "../classes/character";
 const login = document.getElementById("MainLogin");
 
 login.addEventListener("submit",HandleLogin);

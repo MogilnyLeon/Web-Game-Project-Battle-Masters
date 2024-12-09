@@ -1,46 +1,78 @@
-ddEventListener("DOMContentLoaded", () => {
-    let images = document.getElementsByClassName("image");
-    images = Array.from(images);
-    console.log(images);
-    images.forEach(image => {
-        image.addEventListener("click", () => {
-            console.log(image);
-            image.style.backgroundColor = "#ddd";
-        });
-    });
-    images.forEach(image => {
-        image.addEventListener("dblclick", () => {
-            console.log(image);
-            image.style.backgroundColor = "#F1F1F1";
-        });
-    });
+//import { Player } from "../classes/player"; 
+//import { Character } from "../classes/character";
 
-    //Valid API call to fetch custom sprites:
-    //https://api.infinitefusion.org/custom-sprites/329.59
-    //from infinitefusion.org (no documentation th :/)
+//import { Player } from "../classes/player";
 
-    const url = `https://cdn.jsdelivr.net/gh/vishnubai87/custom-sprites/CustomBattlers/9.6.png`
-    
-    const downloadImage =  async (url) =>{
-        const image = await FetchImage(url);
-        return URL.createObjectURL(image);
-    }
-    
-    async function FetchImage(url) {
-        const response = await fetch(url);
-        if (!response.ok) {
-            return new Error("uh oh! Image was wrong");
+/*
+ * List of charcater sprites IDs
+ *
+ * The Serpent
+ *  1-  374.335     Fuzzy!
+ *  2-  342.24      Rayquaza Snek
+ *  3-  28.148      Sand 'n' air?
+ * The Madness
+ *  1-  20.68
+ *  2-
+ *  3-
+ * The Righteous
+ *  1-  329.59
+ *  2-
+ *  3-
+ * The Tinkerer
+ *  1-  9.6
+ *  2-
+ *  3-
+ * The Trickster
+ *  1-  421.94 -> 421.94c.png   
+ *  2-
+ *  3-
+ * The Sorcerer
+ *  1-  38.287 -> 38.287b.png       Fire Alchemist
+ *  2-  255.287 -> 255.287i.png     Witch
+ *  3-  35.287                      Moon Wizard
+ * The Proficient
+ *  1-  331.212 -> 331.212c.png
+ *  2-  
+ *  3-  
+ * The Darkness
+ *  1-  227.287 -> 227.287a.png
+ *  2-  
+ *  3-  
+ */
+ 
+
+
+
+
+let images = document.getElementsByClassName("image");
+const body = document.getElementsByTagName("body");
+images= Array.from(images);
+console.log(images);
+populateCharcters(images)
+let previousIndex = null; 
+images.forEach((image,index) => {
+    image.addEventListener("click", () => {
+        console.log(image);
+        //fix dynamic selection for 1 player
+        if (previousIndex === null) {
+            previousIndex = index;
         }
-        return response.blob();
-    }
+        if (index != previousIndex){
+            images[previousIndex].style.backgroundColor = "F1F1F1";
+        }
+        image.style.backgroundColor = "#ddd";
+        previousIndex = index;
 
-
-    
-    downloadImage(url)
-    .then();
-    src = images[0].getAttribute("src");
-
-    console.log(temp);
-
-    src = temp;
+    });
 });
+
+// images.forEach(image => {
+//     image.addEventListener("dblclick", () => {
+//         console.log(image);
+//         image.style.backgroundColor = "#F1F1F1";
+//     });
+// });
+function populateCharcters(images) {
+    
+
+}
