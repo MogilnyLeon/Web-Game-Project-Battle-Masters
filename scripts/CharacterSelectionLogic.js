@@ -7,37 +7,37 @@
  * List of charcater sprites IDs
  *
  * The Serpent
- *  1-  374.335     Fuzzy!
- *  2-  342.24      Rayquaza Snek
- *  3-  28.148      Sand 'n' air?
+ *  1-  374.335                     Fuzzy!
+ *  2-  342.24                      Rayquaza Snek
+ *  3-  148.335                     Caduceus
  * The Madness
- *  1-  20.68
- *  2-
- *  3-
+ *  1-  20.68                       Muscle Rat
+ *  2-  268.68 -> 268.68a           Fiery Rage
+ *  3-  212.68                      Scissor Barb
  * The Righteous
- *  1-  329.59
- *  2-
- *  3-
+ *  1-  329.59                      Sword Doggo
+ *  2-  329.369                     Fallen Knight
+ *  3-  329.212 -> 329.212c         Chosen One
  * The Tinkerer
- *  1-  9.6
- *  2-
- *  3-
+ *  1-  9.6                         Steam Power!
+ *  2-  337.293                     Cog Handler
+ *  3-  337.439                     The Clockwork
  * The Trickster
- *  1-  421.94 -> 421.94c.png   
- *  2-
- *  3-
+ *  1-  421.94 -> 421.94c.png       Gold Gremlin   
+ *  2-  275.295 -> 275.295a         Dubious Disk
+ *  3-  202.93 -> 202.93c           Eyes        
  * The Sorcerer
- *  1-  38.287 -> 38.287b.png       Fire Alchemist
+ *  1-  38.287 -> 38.287d.png       Fire Alchemist
  *  2-  255.287 -> 255.287i.png     Witch
  *  3-  35.287                      Moon Wizard
  * The Proficient
- *  1-  331.212 -> 331.212c.png
- *  2-  
- *  3-  
+ *  1-  331.212 -> 331.212c.png     Steel Man
+ *  2-  200.348                     Hunter
+ *  3-  212.354 -> 212.354a         Punch Out
  * The Darkness
- *  1-  227.287 -> 227.287a.png
- *  2-  
- *  3-  
+ *  1-  227.287 -> 227.287a.png     Dark Lord
+ *  2-  357.289                     Anomaly
+ *  3-  130.295                     Ragnarok
  */
  
 
@@ -52,27 +52,20 @@ populateCharcters(images)
 let previousIndex = null; 
 images.forEach((image,index) => {
     image.addEventListener("click", () => {
-        console.log(image);
-        //fix dynamic selection for 1 player
-        if (previousIndex === null) {
-            previousIndex = index;
-        }
-        if (index != previousIndex){
-            images[previousIndex].style.backgroundColor = "F1F1F1";
+        if (previousIndex !== null && previousIndex !== index) {
+            images[previousIndex].style.backgroundColor = "#F1F1F1";
         }
         image.style.backgroundColor = "#ddd";
+
         previousIndex = index;
 
     });
 });
-
-// images.forEach(image => {
-//     image.addEventListener("dblclick", () => {
-//         console.log(image);
-//         image.style.backgroundColor = "#F1F1F1";
-//     });
-// });
 function populateCharcters(images) {
     
+}
 
+//Change of plans Image fetching will be done in gameplay
+function fetchImage() {
+    
 }
