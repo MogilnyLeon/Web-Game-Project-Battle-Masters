@@ -35,12 +35,20 @@
     grid-template-columns: auto auto;
   }
 
+  #image {
+    margin: 5%;
+  }
   img {
     width: 128px;
     height: 128px;
   }
   img:hover {
     background-color: #ddd;
+  }
+
+  #main {
+    display: grid;
+    grid-template-columns: auto auto;
   }
 
   
