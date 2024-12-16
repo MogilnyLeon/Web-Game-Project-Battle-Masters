@@ -27,7 +27,7 @@
  *  2-  275.295 -> 275.295a         Dubious Disk    1
  *  3-  202.93 -> 202.93c           Eyes            2
  * The Sorcerer
- *  1-  38.287 -> 38.287d.png       Fire Alchemist  0
+ *  1-  38.287 -> 38.287c.png       Fire Alchemist  0
  *  2-  255.287 -> 255.287i.png     Witch           1
  *  3-  35.287                      Moon Wizard     2
  * The Proficient
@@ -39,7 +39,24 @@
  *  2-  357.289                     Anomaly         1
  *  3-  130.295                     Ragnarok        2
  */
- 
+
+class ClassSprites {
+    constructor(name,ids) {
+      this.ClassName = name;
+      this.Ids = ids  
+    };
+};
+
+const listOfCharacters =  [
+    new ClassSprites("Serpent",["374.335","342.24","148.335"]),
+    new ClassSprites("Madness",["20.68","268.68,1","212.68"]),
+    new ClassSprites("Righteous",["329.59,1","329.369","329.212,3"]),
+    new ClassSprites("Tinkerer",["9.6","337.293","337.439"]),
+    new ClassSprites("Trickster",["421.94,3","275.295,1","202.93,3"]),
+    new ClassSprites("Sorcerer",["38.287,3","255.287,9","35.287"]),
+    new ClassSprites("Proficient",["331.212,3","200.348","212.354,1"]),
+    new ClassSprites("Darkness",["227.287,1","357.289","130.295"]),
+];
 
 //Parse information received from index.html
 let Player1Info = sessionStorage.getItem("player1Info");
@@ -59,6 +76,7 @@ let images = document.getElementsByClassName("image");
 const body = document.getElementsByTagName("body");
 images= Array.from(images);
 let previousIndex = null; 
+let player1skin = document.querySelector(".slctChar1");
 images.forEach((image,index) => {
     image.addEventListener("click", () => {
         if (previousIndex !== null && previousIndex !== index) {
@@ -68,12 +86,146 @@ images.forEach((image,index) => {
 
         previousIndex = index;
         
-        let player1skin = document.querySelector(".slctChar1");
+        
         player1skin.src = image.src;
         player1skin.id = `player1_${image.id}`;
         console.log(player1skin.id);
     });
 });
+
+//Welcome to "Readability Hell part 1", but the logic works :)
+let p1iterator = 0;
+const numSkins = 3;
+let P1imgURL = null;
+player1skin.addEventListener("click",() => {
+    let p1info = null;
+    switch(player1skin.id) {
+        case "player1_Serpent":
+            p1iterator = p1iterator + 1;
+            p1info = listOfCharacters[0].Ids[p1iterator%numSkins].split(',');
+            fetchCharSprites(p1info[0])
+            .then( data => {
+                if(p1info.length === 2){
+                    P1imgURL = data.variants[p1info[1]].image_url;
+                }
+                else {
+                    P1imgURL = data.variants[0].image_url;
+                }
+                player1skin.src = P1imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player1_Madness":
+            p1iterator = p1iterator + 1;
+            p1info = listOfCharacters[1].Ids[p1iterator%numSkins].split(',');
+            fetchCharSprites(p1info[0])
+            .then( data => {
+                if(p1info.length === 2){
+                    P1imgURL = data.variants[p1info[1]].image_url;
+                }
+                else {
+                    P1imgURL = data.variants[0].image_url;
+                }
+                player1skin.src = P1imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player1_Righteous":
+            p1iterator = p1iterator + 1;
+            p1info = listOfCharacters[2].Ids[p1iterator%numSkins].split(',');
+            fetchCharSprites(p1info[0])
+            .then( data => {
+                if(p1info.length === 2){
+                    P1imgURL = data.variants[p1info[1]].image_url;
+                }
+                else {
+                    P1imgURL = data.variants[0].image_url;
+                }
+                player1skin.src = P1imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player1_Tinkerer":
+            p1iterator = p1iterator + 1;
+            p1info = listOfCharacters[3].Ids[p1iterator%numSkins].split(',');
+            fetchCharSprites(p1info[0])
+            .then( data => {
+                if(p1info.length === 2){
+                    P1imgURL = data.variants[p1info[1]].image_url;
+                }
+                else {
+                    P1imgURL = data.variants[0].image_url;
+                }
+                player1skin.src = P1imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player1_Trickster":
+            p1iterator = p1iterator + 1;
+            p1info = listOfCharacters[4].Ids[p1iterator%numSkins].split(',');
+            fetchCharSprites(p1info[0])
+            .then( data => {
+                if(p1info.length === 2){
+                    P1imgURL = data.variants[p1info[1]].image_url;
+                }
+                else {
+                    P1imgURL = data.variants[0].image_url;
+                }
+                player1skin.src = P1imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player1_Sorcerer":
+            p1iterator = p1iterator + 1;
+            p1info = listOfCharacters[5].Ids[p1iterator%numSkins].split(',');
+            fetchCharSprites(p1info[0])
+            .then( data => {
+                if(p1info.length === 2){
+                    P1imgURL = data.variants[[p1info[1]]].image_url;
+                }
+                else {
+                    P1imgURL = data.variants[0].image_url;
+                }
+                player1skin.src = P1imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player1_Proficient":
+            p1iterator = p1iterator + 1;
+            p1info = listOfCharacters[6].Ids[p1iterator%numSkins].split(',');
+            fetchCharSprites(p1info[0])
+            .then( data => {
+                if(p1info.length === 2){
+                    P1imgURL = data.variants[p1info[1]].image_url;
+                }
+                else {
+                    P1imgURL = data.variants[0].image_url;
+                }
+                player1skin.src = P1imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player1_Darkness":
+            p1iterator = p1iterator + 1;
+            p1info = listOfCharacters[7].Ids[p1iterator%numSkins].split(',');
+            fetchCharSprites(p1info[0])
+            .then( data => {
+                if(p1info.length === 2){
+                    P1imgURL = data.variants[p1info[1]].image_url;
+                }
+                else {
+                    P1imgURL = data.variants[0].image_url;
+                }
+                player1skin.src = P1imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        default:
+            console.error("wut");
+      }
+});
+
+let player2skin = document.querySelector(".slctChar2");
 
 let images1 = document.getElementsByClassName("image1");
 images1= Array.from(images1);
@@ -87,17 +239,153 @@ images1.forEach((image1,index) => {
 
         previousIndexAlt = index;
         
-        let player2skin = document.querySelector(".slctChar2");
+
         player2skin.src = image1.src;
         player2skin.id = `player2_${image1.id}`;
         console.log(player2skin.id);
     });
 });
-function populateCharcters(images) {
-    
-}
+
+//Welcome to "Readability Hell part 2", but the logic works :)
+
+let p2iterator = 0;
+let P2imgURL = null;
+player2skin.addEventListener("click",() => {
+    let p2info = null;
+    switch(player2skin.id) {
+        case "player2_Serpent":
+            p2iterator = p2iterator + 1;
+            p2info = listOfCharacters[0].Ids[p2iterator%numSkins].split(',');
+            fetchCharSprites(p2info[0])
+            .then( data => {
+                if(p2info.length === 2){
+                    P2imgURL = data.variants[p2info[1]].image_url;
+                }
+                else {
+                    P2imgURL = data.variants[0].image_url;
+                }
+                player2skin.src = P2imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player2_Madness":
+            p2iterator = p2iterator + 1;
+            p2info = listOfCharacters[1].Ids[p2iterator%numSkins].split(',');
+            fetchCharSprites(p2info[0])
+            .then( data => {
+                if(p2info.length === 2){
+                    P2imgURL = data.variants[p2info[1]].image_url;
+                }
+                else {
+                    P2imgURL = data.variants[0].image_url;
+                }
+                player2skin.src = P2imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player2_Righteous":
+            p2iterator = p2iterator + 1;
+            p2info = listOfCharacters[2].Ids[p2iterator%numSkins].split(',');
+            fetchCharSprites(p2info[0])
+            .then( data => {
+                if(p2info.length === 2){
+                    P2imgURL = data.variants[p2info[1]].image_url;
+                }
+                else {
+                    P2imgURL = data.variants[0].image_url;
+                }
+                player2skin.src = P2imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player2_Tinkerer":
+            p2iterator = p2iterator + 1;
+            p2info = listOfCharacters[3].Ids[p2iterator%numSkins].split(',');
+            fetchCharSprites(p2info[0])
+            .then( data => {
+                if(p2info.length === 2){
+                    P2imgURL = data.variants[p2info[1]].image_url;
+                }
+                else {
+                    P2imgURL = data.variants[0].image_url;
+                }
+                
+                player2skin.src = P2imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player2_Trickster":
+            p2iterator = p2iterator + 1;
+            p2info = listOfCharacters[4].Ids[p2iterator%numSkins].split(',');
+            fetchCharSprites(p2info[0])
+            .then( data => {
+                if(p2info.length === 2){
+                    P2imgURL = data.variants[p2info[1]].image_url;
+                }
+                else {
+                    P2imgURL = data.variants[0].image_url;
+                }
+                player2skin.src = P2imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player2_Sorcerer":
+            p2iterator = p2iterator + 1;
+            p2info = listOfCharacters[5].Ids[p2iterator%numSkins].split(',');
+            fetchCharSprites(p2info[0])
+            .then( data => {
+                if(p2info.length === 2){
+                    P2imgURL = data.variants[p2info[1]].image_url;
+                }
+                else {
+                    P2imgURL = data.variants[0].image_url;
+                }
+                player2skin.src = P2imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player2_Proficient":
+            p2iterator = p2iterator + 1;
+            p2info = listOfCharacters[6].Ids[p2iterator%numSkins].split(',');
+            fetchCharSprites(p2info[0])
+            .then( data => {
+                if(p2info.length === 2){
+                    P2imgURL = data.variants[p2info[1]].image_url;
+                }
+                else {
+                    P2imgURL = data.variants[0].image_url;
+                }
+                player2skin.src = P2imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        case "player2_Darkness":
+            p2iterator = p2iterator + 1;
+            p2info = listOfCharacters[7].Ids[p2iterator%numSkins].split(',');
+            fetchCharSprites(p2info[0])
+            .then( data => {
+                if(p2info.length === 2){
+                    P2imgURL = data.variants[p2info[1]].image_url;
+                }
+                else {
+                    P2imgURL = data.variants[0].image_url;
+                }
+                player2skin.src = P2imgURL;
+            })
+            .catch(error => console.error(error));
+            break;
+        default:
+            console.error("wut");
+      }
+});
+
 
 //Change of plans Image fetching will be done in gameplay
-function fetchImage() {
-    
+async function fetchCharSprites(id) {
+    const response = await fetch(`https://api.infinitefusion.org/custom-sprites/${id}`);
+    if (!response.ok) {
+        return new Error("Uh oh! something's wrong, I can feel it");
+    }
+    const data = await response.json();
+    return data;
 }
