@@ -55,7 +55,7 @@ const listOfCharacters =  [
     new ClassSprites("Trickster",["421.94,3","275.295,1","202.93,3"]),
     new ClassSprites("Sorcerer",["38.287,3","255.287,9","35.287"]),
     new ClassSprites("Proficient",["331.212,3","200.348","212.354,1"]),
-    new ClassSprites("Darkness",["227.287,1","357.289","130.295"]),
+    new ClassSprites("Darkness",["227.287,1","357.289","130.295"])
 ];
 
 //Parse information received from index.html
@@ -89,7 +89,6 @@ images.forEach((image,index) => {
         
         player1skin.src = image.src;
         player1skin.id = `player1_${image.id}`;
-        console.log(player1skin.id);
     });
 });
 
@@ -242,7 +241,6 @@ images1.forEach((image1,index) => {
 
         player2skin.src = image1.src;
         player2skin.id = `player2_${image1.id}`;
-        console.log(player2skin.id);
     });
 });
 
@@ -380,7 +378,7 @@ player2skin.addEventListener("click",() => {
 });
 
 
-//Change of plans Image fetching will be done in gameplay
+
 async function fetchCharSprites(id) {
     const response = await fetch(`https://api.infinitefusion.org/custom-sprites/${id}`);
     if (!response.ok) {
@@ -389,3 +387,36 @@ async function fetchCharSprites(id) {
     const data = await response.json();
     return data;
 }
+
+
+//Handling Game Start section
+
+const range = document.getElementById("slider");
+const output = document.getElementById("numOfTurns");
+output.innerText = range.value;
+let numOfTurn = range.value;
+
+range.oninput = () => {
+    output.innerText = range.value;
+    numOfTurn = range.value;
+};
+
+const StartGame = document.getElementById("startGame");
+
+StartGame.addEventListener("click", () => {
+    sessionStorage.setItem("Name1",Player1Info[0]);
+    sessionStorage.setItem("Age1",Player1Info[1]);
+    sessionStorage.setItem("SelectedChar1",player1skin.id);
+    sessionStorage.setItem("SkinURL1",P1imgURL);
+
+    sessionStorage.setItem("Name2",Player2Info[0]);
+    sessionStorage.setItem("Age2",Player2Info[1]);
+    sessionStorage.setItem("SelectedChar2",player2skin.id);
+    sessionStorage.setItem("SkinURL2",P2imgURL);
+
+    sessionStorage.setItem("GameLength", numOfTurn);
+
+    window.location.href = "./../pages/gameplay.html";
+});
+
+

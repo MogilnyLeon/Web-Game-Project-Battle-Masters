@@ -1,3 +1,5 @@
+
+import { Character } from "../classes/character.js";
 //this is temporary
 
 let health = 100;
@@ -16,6 +18,19 @@ function heal(toHeal) {
     //update display
     updateBar();
 }
+
+const Attack = document.getElementById("attack");
+
+Attack.addEventListener("click", () => {
+    smack(10);
+});
+
+const Heal = document.getElementById("heal");
+
+Heal.addEventListener("click", () => {
+    heal(20);
+});
+
 //update display
 function updateBar() {
     const bar = document.getElementById("bar");
