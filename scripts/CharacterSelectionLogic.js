@@ -1,7 +1,6 @@
 // import { Player } from "./../classes/player"; 
 // import { Character } from "./../classes/character";
 
-//import { Player } from "../classes/player";
 
 /*
  * List of charcater sprites IDs
