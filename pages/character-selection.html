@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href=".\..\styles\charselect.css">
+<script type="module" defer src="./../scripts/CharacterSelectionLogic.js"></script>
+</head>
+<body style="background-color:white;">
+
+<h1>Battle Masters</h1>
+<div id="main">
+<div id="player1">
+  
+  <p>
+    Player 1:
+    <span id="Name1"></span>
+    <br/>
+    <br/>
+    <img class="slctChar1" src="./../public/no_Character.png"/>
+  </p>
+  
+  <div class="dropdown">
+    <button class="dropbtn">Choose Your Champion!</button>
+    <div class="dropdown-content">
+      <img class="image" id="Serpent" src=".\..\public\The Serpent\374.335.png"/>
+      <img class="image" id="Madness" src=".\..\public\The Madness\20.68.png"/>
+      <img class="image" id="Righteous" src=".\..\public\The Righteous\329.59a.png"/>
+      <img class="image" id="Tinkerer" src=".\..\public\The Tinkerer\9.6.png"/>
+      <img class="image" id="Trickster" src=".\..\public\The Trickster\421.94c.png"/>
+      <img class="image" id="Sorcerer" src=".\..\public\The Sorcerer\38.287c.png"/>
+      <img class="image" id="Proficient" src=".\..\public\The Proficient\331.212c.png"/>
+      <img class="image" id="Darkness" src=".\..\public\The Darkness\227.287a.png"/>
+    </div>
+  </div>
+</div>
+
+<div id="GameStart">
+  <p>Game Length: <span id="numOfTurns">30</span></p>
+  <input type="range" min="10" max="50" value="30" class="slider" id="slider">  <br/>
+  <button id="startGame"><h2>Start Game!</h2></button>
+</div>
+
+<div id="player2">
+  
+  <p>
+    Player 2:
+    <span id="Name2"></span>
+    <br/>
+    <br/>
+    <img class="slctChar2" src="./../public/no_Character.png"/>
+  </p>
+  
+  
+  <div class="dropdown">
+    <button class="dropbtn">Choose Your Champion!</button>
+    <div class="dropdown-content">
+      <img class="image1" id="Serpent" src=".\..\public\The Serpent\374.335.png"/>
+      <img class="image1" id="Madness" src=".\..\public\The Madness\20.68.png"/>
+      <img class="image1" id="Righteous" src=".\..\public\The Righteous\329.59a.png"/>
+      <img class="image1" id="Tinkerer" src=".\..\public\The Tinkerer\9.6.png"/>
+      <img class="image1" id="Trickster" src=".\..\public\The Trickster\421.94c.png"/>
+      <img class="image1" id="Sorcerer" src=".\..\public\The Sorcerer\38.287c.png"/>
+      <img class="image1" id="Proficient" src=".\..\public\The Proficient\331.212c.png"/>
+      <img class="image1" id="Darkness" src=".\..\public\The Darkness\227.287a.png"/>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>

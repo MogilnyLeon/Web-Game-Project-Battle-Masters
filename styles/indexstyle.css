@@ -1,0 +1,91 @@
+
+    /*
+
+    .woff = best option for web
+    .ttf = traditional option
+    .bot = internet explorer
+
+    @font-face {
+        font-family: "smthin";
+        src: url(filepath);
+    }
+
+    body {
+        font-family: "smthin",sans-serif
+    }
+    */
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #eb9e10, #D93F3F);
+        color: #333;
+    }
+    
+    #TitleCard {
+        max-width: 100%;
+        width: 600px;
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    #MainLogin {
+        background-color: #ffffff;
+        padding: 20px 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    #MainLogin div {
+        margin-bottom: 15px;
+    }
+    
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    
+    input[type="text"],
+    input[type="number"] {
+        width: 95%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #09ac4d;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: #0b9444;
+    }
+    
+    #PlayerLogin1, #PlayerLogin2 {
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+    }

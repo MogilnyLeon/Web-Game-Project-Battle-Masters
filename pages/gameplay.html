@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="./../scripts/gameplayLogic.js"></script>
+    <link rel="stylesheet" href="./../styles/GameplayStyle.css">
+</head>
+<body>
+    <h1 id="TurnInfo"></h1>
+    <h2 id="turnDisplay">Turn <span id="numofTurns"></span></h2>
+
+    <div id="grid">
+        <div id="Player1">
+            <p><span id="P1Name"></span> as <span id="P1Character"></span></p>
+            <img id="Player1Char" src=".\..\public\no_Character.png"/>
+            <div id="HealthContainerP1">
+                <div id="bar1"></div>
+                
+            </div>
+            <span id="healthP1">100/100</span>
+            <div id="buttonMenu1">
+                <button class="button1" id="Attack1">Attack</button>
+                <button class="button1" id="Ability1">Ability</button>
+                <button class="button1"id="Heal1">Heal</button>
+                <button class="button1" id="Forfeit1">Forfeit</button>
+            </div>
+        </div>
+
+        <p id="actionDisplay">
+            No Actions
+        </p>
+
+        <div id="Player2">
+            <p><span id="P2Name"></span> as <span id="P2Character"></span></p>
+            <img id="Player2Char" src=".\..\public\no_Character.png"/>
+            <div id="HealthContainerP2">
+                <div id="bar2"></div>
+            </div>
+            <span id="healthP2">100/100</span>
+            <div id="buttonMenu2">
+                <button class="button2" id="Attack2">Attack</button>
+                <button class="button2" id="Ability2">Ability</button>
+                <button class="button2" id="Heal2">Heal</button>
+                <button class="button2"id="Forfeit2">Forfeit</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
