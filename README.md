@@ -2,6 +2,10 @@
 Web Programming 1 Project
 
 Project Name: Pokemon BattleMasters Battle Sim
+So I was inspired by the actual Pokemon game I'm making which is named Pokemon Battle Masters. 
+But because of the time constraints and requirements, I decided to do the next best thing:
+A crossover between Pokemon Infinite Fusions (a very popular Pokemon fangame) and DnD
+The combat is turned based and a selection of 8 characters, loosely inspired by DnD classes, are available.
 
 Designs:
 <img src="./private/Web Prog Game Project Design Prototype.png"/>
