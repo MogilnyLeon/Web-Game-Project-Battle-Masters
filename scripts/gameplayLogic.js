@@ -335,31 +335,31 @@ async function main() {
                 case "Trickster":
                     EldritchTrickster(player1);
                     break;
-                    case "Sorcerer":
-                        Runechild(player1);
-                        break;
-                    case "Proficient":
-                        if(!AbilityToggleP1) {
-                            AbilityToggleP1=true;
-                            UpdateActionDisplay(`${player1.PlayerName} steels themseleves and becomes more combative.\nHits will be stronger, but it comes at a cost`);
-                        } else {
-                            AbilityToggleP1=false;
-                            UpdateActionDisplay(`${player1.PlayerName} keeps a level head and finds balance`);
-                        }
-                        P1Turn=false;
-                        updateTurnDisplay(P1Turn);
-                        break;
-                    case "Darkness":
-                        if(!AbilityToggleP1) {
-                            AbilityToggleP1=true;
-                            UpdateActionDisplay(`${player1.PlayerName} casts a shadow over the oppoenent.\nRejuvenation will come at a cost`);
-                        } else {
-                            AbilityToggleP1=false;
-                            UpdateActionDisplay(`${player1.PlayerName} The shadow is banished. The battlefield is peaceful.`);
-                        }
-                        P1Turn=false;
-                        updateTurnDisplay(P1Turn);
-                        break;
+                case "Sorcerer":
+                    Runechild(player1);
+                    break;
+                case "Proficient":
+                    if(!AbilityToggleP1) {
+                        AbilityToggleP1=true;
+                        UpdateActionDisplay(`${player1.PlayerName} steels themseleves and becomes more combative.\nHits will be stronger, but it comes at a cost`);
+                    } else {
+                        AbilityToggleP1=false;
+                        UpdateActionDisplay(`${player1.PlayerName} keeps a level head and finds balance`);
+                    }
+                    P1Turn=false;
+                    updateTurnDisplay(P1Turn);
+                    break;
+                case "Darkness":
+                    if(!AbilityToggleP1) {
+                        AbilityToggleP1=true;
+                        UpdateActionDisplay(`${player1.PlayerName} casts a shadow over the oppoenent.\nRejuvenation will come at a cost`);
+                    } else {
+                        AbilityToggleP1=false;
+                        UpdateActionDisplay(`${player1.PlayerName} The shadow is banished. The battlefield is peaceful.`);
+                    }
+                    P1Turn=false;
+                    updateTurnDisplay(P1Turn);
+                    break;
             }
         });
 
@@ -571,7 +571,7 @@ async function main() {
             }
         }
         // Deals increased damage, but takes increased damage until ability is toggled off
-        function Combative(currentplayer) {
+        function Combative() {
             //returns bonus damage
             return 5;
         }
@@ -583,7 +583,7 @@ async function main() {
                 updateBarP1();
             }
             else {
-                updateBarP1();
+                updateBarP2();
             }
         }
 

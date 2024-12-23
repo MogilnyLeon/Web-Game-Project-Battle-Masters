@@ -23,3 +23,7 @@ Ressources used:
 ChatGPT for speeding up the CSS styling
 
 
+Weird Issue with Github Hosting:
+<img src= "./private/API Fetch Denial.png"/>
+
+
