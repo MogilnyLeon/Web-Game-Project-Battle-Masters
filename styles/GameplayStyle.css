@@ -97,3 +97,9 @@ body {
     font-size: large;
     border-radius: 15px;
 }
+
+#actionDisplay {
+    text-align: center;
+    font-size: larger;
+    font-weight:bolder;
+}

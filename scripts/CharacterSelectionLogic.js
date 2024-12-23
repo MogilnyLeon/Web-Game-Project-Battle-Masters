@@ -85,7 +85,8 @@ images.forEach((image,index) => {
 
         previousIndex = index;
         
-        
+        //this causes a bug where if a character is selected, but a a skin isn't cycled. The base image won't load
+        //might be almost impossible to implement without overbloating the code
         player1skin.src = image.src;
         player1skin.id = `player1_${image.id}`;
     });
@@ -237,7 +238,8 @@ images1.forEach((image1,index) => {
 
         previousIndexAlt = index;
         
-
+        //this causes a bug where if a character is selected, but a a skin isn't cycled. The base image won't load
+        //might be almost impossible to implement without overbloating the code
         player2skin.src = image1.src;
         player2skin.id = `player2_${image1.id}`;
     });
