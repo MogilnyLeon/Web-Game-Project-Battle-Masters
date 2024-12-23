@@ -405,19 +405,27 @@ range.oninput = () => {
 const StartGame = document.getElementById("startGame");
 
 StartGame.addEventListener("click", () => {
-    sessionStorage.setItem("Name1",Player1Info[0]);
-    sessionStorage.setItem("Age1",Player1Info[1]);
-    sessionStorage.setItem("SelectedChar1",player1skin.id);
-    sessionStorage.setItem("SkinURL1",P1imgURL);
+    if(player1skin.id === "" || P1imgURL === "") {
+        alert("Please select a character or a valid skin for Player 1");
+    }
+    if(player2skin.id === "" || P2imgURL === "") {
+        alert("Please select a character or a valid skin for Player 2");
+    }
+    else {
+        sessionStorage.setItem("Name1",Player1Info[0]);
+        sessionStorage.setItem("Age1",Player1Info[1]);
+        sessionStorage.setItem("SelectedChar1",player1skin.id);
+        sessionStorage.setItem("SkinURL1",P1imgURL);
 
-    sessionStorage.setItem("Name2",Player2Info[0]);
-    sessionStorage.setItem("Age2",Player2Info[1]);
-    sessionStorage.setItem("SelectedChar2",player2skin.id);
-    sessionStorage.setItem("SkinURL2",P2imgURL);
+        sessionStorage.setItem("Name2",Player2Info[0]);
+        sessionStorage.setItem("Age2",Player2Info[1]);
+        sessionStorage.setItem("SelectedChar2",player2skin.id);
+        sessionStorage.setItem("SkinURL2",P2imgURL);
 
-    sessionStorage.setItem("GameLength", numOfTurn);
+        sessionStorage.setItem("GameLength", numOfTurn);
 
-    window.location.href = "./../pages/gameplay.html";
+        window.location.href = "./../pages/gameplay.html";
+    }
 });
 
 
